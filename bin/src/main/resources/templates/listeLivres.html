@@ -17,16 +17,12 @@ Liste des Livres
 <div class="card-body">
 <table class="table table-striped">
 <tr>
-<th>ID</th><th>Nom Livres</th><th>Prix</th><th>Date</th><th>Edition</th><th>Suppression</th>
+<th>ID</th><th>Nom Livres</th><th>Prix</th>
 </tr>
 <tr th:each="l:${livres.content}">
 <td th:text="${l.idLivre}"></td>
 <td th:text="${l.nomLivre}"></td>
 <td th:text="${l.prixLivre}"></td>
-<td th:text="${l.dateCreation}"></td>
-
-<td><a class="btn btn-success"
-th:href="@{modifierLivre(id=${l.idLivre})}">Editer</a></td>
 
 <td><a class="btn btn-danger" onclick="return confirm('Etes-vous sûr ?')" 
 th:href="@{supprimerLivre(id=${l.idLivre}, page=${currentPage},size=${size})}">
